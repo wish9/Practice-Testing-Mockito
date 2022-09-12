@@ -19,12 +19,6 @@ public class MemberControllerHomeworkTest {
     private Gson gson;
 
     @Test
-    void postMemberTest() throws Exception {
-        // TODO MemberController의 postMember() 핸들러 메서드를 테스트하는 테스트 케이스를 여기에 작성하세요.
-        // TODO Mockito를 사용해야 합니다. ^^
-    }
-
-    @Test
     void patchMemberTest() throws Exception {
         // TODO MemberController의 patchMember() 핸들러 메서드를 테스트하는 테스트 케이스를 여기에 작성하세요.
         // TODO Mockito를 사용해야 합니다. ^^

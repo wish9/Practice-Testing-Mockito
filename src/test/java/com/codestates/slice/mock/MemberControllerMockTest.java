@@ -23,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
 class MemberControllerMockTest {
@@ -39,6 +38,7 @@ class MemberControllerMockTest {
     @Autowired
     private MemberMapper mapper;
 
+
     @Test
     void postMemberTest() throws Exception {
         // given
@@ -49,7 +49,8 @@ class MemberControllerMockTest {
         Member member = mapper.memberPostToMember(post);
         member.setStamp(new Stamp());
 
-        given(memberService.createMember(Mockito.any()))
+        // stubbing
+        given(memberService.createMember(Mockito.any(Member.class)))
                 .willReturn(member);
 
         String content = gson.toJson(post);
