@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
@@ -27,7 +28,7 @@ public class MemberServiceMockTest {
     public void createMemberTest() {
         // given
         Member member = new Member("hgd@gmail.com", "홍길동", "010-1111-1111");
-        given(memberRepository.findByEmail(member.getEmail()))
+        given(memberRepository.findByEmail(Mockito.anyString()))
                 .willReturn(Optional.of(member));
 
         // when / then
